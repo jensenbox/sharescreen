@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>Here are your screen-sharing links:</p>
+<article>
+    <h3>Share Link</h3>
+    <a href="{{ share_link }}" class="button">{{ share_link }}</a>
+</article>
+<article>
+    <h3>View Link</h3>
+    <a href="{{ view_link }}" class="button">{{ view_link }}</a>
+</article>
+{% endblock %}

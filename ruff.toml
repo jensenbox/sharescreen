@@ -1,0 +1,94 @@
+# https://docs.astral.sh/ruff/settings/
+
+include = [
+
+]
+
+# https://docs.astral.sh/ruff/settings/#exclude
+exclude = [
+
+]
+
+line-length = 88 # https://docs.astral.sh/ruff/settings/#line-length
+indent-width = 4 # https://docs.astral.sh/ruff/settings/#indent-width
+
+# https://docs.astral.sh/ruff/settings/#format
+[format]
+docstring-code-format = true # https://docs.astral.sh/ruff/settings/#format_docstring-code-format
+docstring-code-line-length = "dynamic" # https://docs.astral.sh/ruff/settings/#format_docstring-code-line-length
+
+# https://docs.astral.sh/ruff/settings/#format_exclude
+exclude = [
+
+]
+
+# Like Black, use double quotes for strings.
+quote-style = "double" # https://docs.astral.sh/ruff/settings/#format_quote-style
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space" # https://docs.astral.sh/ruff/settings/#format_indent-style
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false # https://docs.astral.sh/ruff/settings/#format_skip-magic-trailing-comma
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto" # https://docs.astral.sh/ruff/settings/#format_line-ending
+
+# https://docs.astral.sh/ruff/settings/#lint
+[lint]
+
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+select = ["ALL"]
+
+ignore = [# https://docs.astral.sh/ruff/settings/#lint_ignore
+
+    # Recommended to ignore: https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    "W191",
+    "E111",
+    "E114",
+    "E117",
+    "D206",
+    "D300",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "COM812",
+    "COM819",
+    "ISC001",
+    "ISC002",
+    "E501",
+]
+
+[lint.per-file-ignores]
+"test_*.py" = [
+    "S101", # Use of assert detected - https://docs.astral.sh/ruff/rules/assert/
+]
+
+[lint.pydocstyle]
+convention = "google" # https://docs.astral.sh/ruff/settings/#lint_pydocstyle_convention
+
+[lint.pyflakes]
+extend-generics = ["django.db.models.ForeignKey"] # https://docs.astral.sh/ruff/settings/#lint_pyflakes_extend-generics
+
+[lint.pylint]
+max-branches = 8 # https://docs.astral.sh/ruff/settings/#lint_pylint_max-branches
+max-locals = 15 # https://docs.astral.sh/ruff/settings/#lint_pylint_max-locals
+max-nested-blocks = 5 # https://docs.astral.sh/ruff/settings/#lint_pylint_max-nested-blocks
+max-positional-args = 0 # https://docs.astral.sh/ruff/settings/#lint_pylint_max-positional-args
+
+[lint.isort]
+default-section = "third-party" # https://docs.astral.sh/ruff/settings/#lint_isort_default-section
+
+# as per https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+# these are the default values and should not be adjusted
+force-single-line = false # https://docs.astral.sh/ruff/settings/#lint_isort_force-single-line
+force-wrap-aliases = false # https://docs.astral.sh/ruff/settings/#lint_isort_force-wrap-aliases
+lines-after-imports = 2 # https://docs.astral.sh/ruff/settings/#lint_isort_lines-after-imports
+lines-between-types = 0 # https://docs.astral.sh/ruff/settings/#lint_isort_lines-between-types
+split-on-trailing-comma = true # https://docs.astral.sh/ruff/settings/#lint_isort_split-on-trailing-comma
