@@ -1,0 +1,11 @@
+[project]
+name = "sharescreen"
+version = "0.1.0"
+description = "Sahre your screen easily"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi[all]>=0.115.5",
+    "loguru>=0.7.2",
+    "websockets>=14.1",
+]
